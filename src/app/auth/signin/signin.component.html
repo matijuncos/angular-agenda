@@ -4,33 +4,17 @@
     </div>
     <div class="login-form">
         <h3>Email:</h3>
-        <input 
-            required 
-            type="text" 
-            placeholder="Username" 
-            [(ngModel)]="user.email"
-            name="email"
-			id="email"
-			#email="ngModel" />
+        <input required type="text" placeholder="Username" [(ngModel)]="user.email" name="email" id="email"
+            #email="ngModel" />
         <br />
         <h3>Contraseña:</h3>
-        <input 
-            required 
-            type="password" 
-            placeholder="Password" 
-            [(ngModel)]="user.password"
-            name="password"
-			id="password"
-			#password="ngModel" />
+        <input required type="password" placeholder="Password" [(ngModel)]="user.password" name="password" id="password"
+            #password="ngModel" />
         <br />
-        <input 
-            type="button" 
-            value="Iniciar Sesión" 
-            class="login-button" 
-            (click)="signIn()" 
+        <input type="button" value="Iniciar Sesión" class="login-button" (click)="signIn()"
             [disabled]="email.invalid || password.invalid" />
-        <p>¿Todavía no tenés cuenta?</p>    
-        <a href="/auth/register">Crear cuenta</a>
+        <p>¿Todavía no tenés cuenta?</p>
+        <a routerLink="/auth/register">Crear cuenta</a>
     </div>
-    
+
 </div>

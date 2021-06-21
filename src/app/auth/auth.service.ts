@@ -88,6 +88,15 @@ export class AuthService {
     }
   }
 
+  verificaLog(){
+    if(localStorage.getItem('user')){
+      return of(false)
+    }else{
+      //ejectutar el post para loguearse desde localstorage
+      return of(true)
+    }
+  }
+
   logFromLS(token){
     this.http.post<any>('https://organizateunpoco.herokuapp.com/api/user/preserve', {token}, {
       headers:{

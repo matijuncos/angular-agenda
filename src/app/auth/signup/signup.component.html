@@ -5,10 +5,10 @@
     </div>
     <div class="login-form">
         <h3>Nombre:</h3>
-        <input required type="text" placeholder="Nombre" [(ngModel)]="user.name" name="name" id="name"
+        <input required type="text" placeholder="Nombre" [(ngModel)]="user.firstName" name="name" id="name"
             #name="ngModel" /><br />
         <h3>Apellido:</h3>
-        <input required type="text" placeholder="Apellido" [(ngModel)]="user.lastname" name="lastname" id="lastname"
+        <input required type="text" placeholder="Apellido" [(ngModel)]="user.lastName" name="lastname" id="lastname"
             #lastname="ngModel" /><br />
         <h3>Email:</h3>
         <input required type="text" placeholder="Email" [(ngModel)]="user.email" name="email" id="email"
@@ -20,7 +20,7 @@
         <input type="button" value="Enviar" class="login-button" (click)="signUp()"
             [disabled]="name.invalid || lastname.invalid || email.invalid || password.invalid" />
         <p>¿Ya tenés cuenta?</p>
-        <a href="/auth/login">Iniciar sesión</a>
+        <a routerLink="/auth/login">Iniciar sesión</a>
     </div>
 </div>
 <br><br><br>

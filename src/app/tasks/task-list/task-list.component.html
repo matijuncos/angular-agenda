@@ -1,31 +1,22 @@
 <div class="textBox">
 	<div>
 		<h2>¡Hola!</h2>
-		<h3>¿Con ganas de disfrutar <br/> y apovechar tu tiempo?</h3>
+		<h3>¿Con ganas de disfrutar <br /> y apovechar tu tiempo?</h3>
 		<p>Organizate para empezar</p>
 	</div>
 	<div>
-		<img src="../../../assets/home-naranja-x.png"/>
+		<img src="../../../assets/home-naranja-x.png" />
 	</div>
 </div>
 <div class="tasks-list-Container" *ngIf="!loading; else loader">
 	<div *ngFor="let task of tasks">
-		<app-task
-			[eachTask]="task"
-			(evento)="deleteTask($event)"
-			(update)="taskToDone($event)"
-		></app-task>
+		<app-task [eachTask]="task" (evento)="deleteTask($event)" (update)="taskToDone($event)"></app-task>
 	</div>
 </div>
 <ng-template #loader>
 	<div class="spinnerContainer">
-		<app-fulfilling-bouncing-circle-spinner
-			[animationDuration]="4000"
-			[size]="60"
-			[color]="'#320A46'"
-		>
+		<app-fulfilling-bouncing-circle-spinner [animationDuration]="4000" [size]="60" [color]="'#320A46'">
 		</app-fulfilling-bouncing-circle-spinner>
 	</div>
 </ng-template>
 <br><br><br>
-

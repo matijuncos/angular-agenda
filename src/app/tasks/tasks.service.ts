@@ -5,8 +5,6 @@ import { HttpClient } from '@angular/common/http';
 	providedIn: 'root',
 })
 export class TasksService {
-	tasks: any[] ;
-
 	constructor(private http: HttpClient) {}
 
 	getTasks() {
@@ -27,7 +25,10 @@ export class TasksService {
 			'https://organizateunpoco.herokuapp.com/api/task/' + id
 		);
 	}
-	taskstatus(id){
-		return this.http.post('https://organizateunpoco.herokuapp.com/api/task/'+id, id)
-	  }
+	taskstatus(id) {
+		return this.http.post(
+			'https://organizateunpoco.herokuapp.com/api/task/' + id,
+			id
+		);
+	}
 }
